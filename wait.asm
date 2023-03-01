@@ -1,15 +1,17 @@
+BITS 64
+
+global _start
 section .data
     ; strucs
     timeval:
         sec  dd 0
         usec dd 0
     ; consts
-    hello: db "Time to wait", 0x0a
-    hellolen: equ $-hello
-    bye: db "Bye Bye", 0x0a
-    byelen: equ $-bye
+    hello db "Time to wait", 0x0a
+    hellolen equ $-hello
+    bye db "Bye Bye", 0x0a
+    byelen equ $-bye
 section .text
-    global _start
     _start:
         mov     rax,4           ; Set to write
         mov     rbx,1           ; Set output
@@ -19,7 +21,7 @@ section .text
 
         mov     dword [sec], 10 ; set seconds
         mov     dword [usec], 0 ; set nanoseconds
-        mov     rax, 162        ; set to timer in short
+        mov     rax, 162        ; set to nanosleep
         mov     rbx, timeval    ; tell to wait
         mov     rcx, 0          ; put 0 in rcx
         int     0x80            ; call to system
