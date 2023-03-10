@@ -9,7 +9,7 @@ BITS 32 ; tell nasm this is 32 bit code
 global _start
     
 section .data
-    x db 10                                     ; set variable x to 10
+    check db 20                                     ; set variable x to 10
     truest db "ecx is eqaul to 10", 0x0a        ; define the if true statement
     truelen equ $ - truest                      ; get length of the statement
     falsest db "ecx is not equal to 10", 0x0a   ; define the false statement
@@ -17,7 +17,7 @@ section .data
 section .text
     _start:
         mov     eax, 1                          ; set 
-        mov     ecx, x                          ; move value of x into ecx
+        mov     ecx, check                      ; move 10 into ecx
         cmp     ecx, 10                         ; check if ecx is equal to ecx
         je      true                            ; jump if ecx is eqaul to 10
         jne     false                           ; jump if its not equl to 10
