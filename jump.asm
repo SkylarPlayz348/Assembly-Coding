@@ -20,19 +20,11 @@ section .text
         mov     ecx, check                      ; move 10 into ecx
         cmp     ecx, 10                         ; check if ecx is equal to ecx
         je      true                            ; jump if ecx is eqaul to 10
-        jne     false                           ; jump if its not equl to 10
     true:
         mov     eax, 4                          ; set to system write
         mov     ebx, 1                          ; set to standard out
         mov     ecx, truest                     ; move true statement into ecx
         mov     edx, truelen                    ; move length of statement into edx
-        int     0x80                            ; call the kernel
-        jmp     exit                            ; jump to exit
-    false:
-        mov     eax, 4                          ; set to system write
-        mov     ebx, 1                          ; set to standard out
-        mov     ecx, falsest                    ; move false statement into ecx
-        mov     edx, falselen                   ; move length of statement into edx
         int     0x80                            ; call the kernel
         jmp     exit                            ; jump to exit
     exit:

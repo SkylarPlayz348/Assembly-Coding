@@ -1,5 +1,3 @@
-;; This is the 32 bit version of stack_64_bit
-
 BITS 32                         ; tell nasm this is 64 bit code
 
 global _start

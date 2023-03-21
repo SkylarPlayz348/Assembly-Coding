@@ -1,11 +1,7 @@
-BITS 64
+BITS 64                        ;
 
 global _start
 section .data
-    ; strucs
-    timeval:
-        sec  dd 0
-        usec dd 0
     ; consts
     hello db "Time to wait", 0x0a
     hellolen equ $-hello
@@ -13,25 +9,31 @@ section .data
     byelen equ $-bye
 section .text
     _start:
-        mov     rax,4           ; Set to write
-        mov     rbx,1           ; Set output
-        mov     rcx, hello      ; set message
-        mov     rdx, hellolen   ; set message length
-        int     0x80            ; call the system
+        mov     rax,1           ; Set to write
+        mov     rdi,1           ; Set output
+        mov     rsi, hello      ; Set message
+        mov     rdx, hellolen   ; Set message length
+        syscall                 ; Call the system kernal
 
-        mov     dword [sec], 10 ; set seconds
-        mov     dword [usec], 0 ; set nanoseconds
-        mov     rax, 162        ; set to nanosleep
-        mov     rbx, timeval    ; tell to wait
-        mov     rcx, 0          ; put 0 in rcx
-        int     0x80            ; call to system
+        call    _wait
 
-        mov     rax,4           ; Set to write
-        mov     rbx,1           ; Set output
-        mov     rcx, bye        ; set message
-        mov     rdx, byelen     ; set message length
-        int     0x80            ; call the system
+        mov     rax,1           ; Set to write
+        mov     rdi,1           ; Set output
+        mov     rsi, bye        ; Set message
+        mov     rdx, byelen     ; Set message length
+        syscall                 ; Call the system kernal
 
-        mov     rax,1           ; set to exit
-        mov     rbx,0           ; set exit code
-        int     0x80            ; call to system
+        mov     rax,60          ; Set to exit
+        mov     rdi,0           ; Set exit code
+        syscall                 ; Call the system kernal
+    _wait:
+        mov     rbp, rsp        ; Store the return location
+        sub     rsp, 2          ; Allocate 2 spaces in the stack
+        push    0               ; Set nanoseconds
+        push    5               ; Set seconds
+        mov     rax, 35         ; Set to nanosleep
+        mov     rdi, rsp        ; Tell to wait
+        xor     rsi, rsi        ; Clear rsi
+        syscall                 ; Call the system kernal
+        mov     rsp, rbp        ; Restore return location
+        ret                     ; Return back

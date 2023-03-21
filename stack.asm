@@ -2,7 +2,7 @@
 ;;                                                                      ;;
 ;;      This may look different than the other but that's because of    ;;
 ;;      how I had to code it for x86_64 you can check out the 32 bit    ;;
-;;      version on the one labeled 32 bit                               ;;
+;;      version in the 32 bit folder                                    ;;
 ;;                                                                      ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
