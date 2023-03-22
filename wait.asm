@@ -1,4 +1,4 @@
-BITS 64                        ;
+BITS 64                        ; Tell nasm this is 64 bit code
 
 global _start
 section .data

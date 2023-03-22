@@ -5,11 +5,11 @@
 ;;                                                                               ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-BITS 32 ; tell nasm this is 32 bit code
+BITS 32                                         ; tell nasm this is 32 bit code
 global _start
     
 section .data
-    check db 20                                     ; set variable x to 10
+    check db 20                                 ; set variable x to 10
     truest db "ecx is eqaul to 10", 0x0a        ; define the if true statement
     truelen equ $ - truest                      ; get length of the statement
     falsest db "ecx is not equal to 10", 0x0a   ; define the false statement
