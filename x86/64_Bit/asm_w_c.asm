@@ -13,4 +13,4 @@ section .text
         call printf wrt ..plt       ; This tells the linker to allow for memory relocation
         pop rbp                     ; Pop the last value off the stack and put it in rbp
         xor rax, rax                ; Cancel out rax making the value 0
-        ret                         ; Return from 
+        ret                         ; Return from Function
