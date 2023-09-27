@@ -8,4 +8,4 @@ All ARM based assembly is in the `ARM` folder this includes both 32 and 64 bit c
 
 ---
 ### Syntax Note:
-I use `nasm` as my assembler
+I use `nasm` as my assembler for `x86`
