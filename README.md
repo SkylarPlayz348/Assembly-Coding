@@ -1,11 +1,10 @@
-# assembly-coding
-This is where I will learn how to code in Assebly
+# ARM Assembly Coding
 
-### Structure Notes:
-All x86 based assembly is in the `x86` folder this includes both x86 and x86_64/x64
+<p style="font-size: 17px">This is wher I will code in arm and arm64 assembly</p>
 
-All ARM based assembly is in the `ARM` folder this includes both 32 and 64 bit code
+### Syntax Note:
 
 ---
-### Syntax Note:
-I use `nasm` as my assembler for `x86`
+
+- I use `as` or the GNU Assembler
+- 64 bit code will run on M series Macs
