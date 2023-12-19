@@ -1,6 +1,6 @@
 # ARM Assembly Coding
 
-<p style="font-size: 17px">This is wher I will code in arm and arm64 assembly</p>
+<p style="font-size: 17px">This is where I will code in arm and arm64 assembly</p>
 
 ### Syntax Note:
 
