@@ -1,3 +1,4 @@
 # getting rid of compiled work
 *.o
 *.out
+.DS_Store
